@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Shop | Your Gateway to the Solar System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        :root{
+            --primary-color: #2c2c2c;
+            --accent-color: #64ffda;
+            --text-color: #ffffff;
+            --transition: all 0.3s ease; 
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header{
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 5%;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255, 0.2);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .header-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo{
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a{
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+        nav a:hover{
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        .hero{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            min-height: 100vh;
+            padding: 8rem 5% 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .planet-title{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .planet-title h1{
+            background: linear-gradient(to right, #fff, var(--accent-color));
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .planet-info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .planet-info p{
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .planet-stats{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card{
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-card h3{
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .btn{
+            color: var(--primary-color);
+            background-color: var(--accent-color) ;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .btn:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+        .planet-image{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    .planet-image img{
+        max-width: 100%;
+        height: auto;
+        animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+    }
+    @media(max-width:1024px) {
+            .hero {
+                grid-template-columns: 1fr 1fr;
+            }
+            .planet-image {
+                grid-column: span 2;
+                order: -1;
+            }
+            .planet-image img {
+                max-width: 60%;
+            }
+    }
+    @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 6rem;
+            }
+            .planet-image img {
+                max-width: 80%;
+            }
+            nav ul {
+                display: none;
+            }
+            .logo {
+                font-size: 1.2rem;
+            }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">PLANETSHOP</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <main class="hero">
+        <div class="planet-title">
+            <h1>Mercury</h1>
+            <p>The Swift Planet</p>
+        </div>
+        
+        <div class="planet-info">
+            <p>Mercury is the smallest planet in our Solar System and the closest to the Sun, offering unique opportunities for solar energy harvesting and rare mineral mining.</p>
+            <div class="planet-stats">
+                <div class="stat-card">
+                    <h3>DIAMETER</h3>
+                    <p>4,879 km</p>
+                </div>
+                <div class="stat-card">
+                    <h3>ORBITAL PERIOD</h3>
+                    <p>88 days</p>
+                </div>
+                <div class="stat-card">
+                    <h3>SURFACE TEMP</h3>
+                    <p>-180°C to 430°C</p>
+                </div>
+                <div class="stat-card">
+                    <h3>MOONS</h3>
+                    <p>0</p>
+                </div>
+            </div>
+            <button class="btn">Purchase Planet</button>
+        </div>
+        
+        <div class="planet-image">
+            <img src="merc.webp" alt="Mercury">
+        </div>
+    </main>
+</body>
+</html>
